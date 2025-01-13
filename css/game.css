@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+    font-family: "Arial", sans-serif;
+  }
+  span {
+    font-family: "Wendy One", sans-serif;
+    font-size: 28px;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 40%;
+  }
+  a {
+    font-family: "Wendy One", sans-serif;
+    text-decoration: none;
+    color: #ff69b4;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    font-size: 20px;
+  }
+  
+  /* Reset */
+.Reset {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .Reset > a {
+    all: unset;
+    color: #ff69b4;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ff69b4;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: transparent;
+  }
+  .Reset > a:hover {
+    color: white;
+    background-color: #ff69b4;
+    border-color: #ff85a2;
+  }
+  .Reset .icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+  }
+  .Reset .icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
