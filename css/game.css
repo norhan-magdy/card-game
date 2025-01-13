@@ -93,6 +93,15 @@
   .tries > span {
     font-size: 18px;
   }
+  .block4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .block6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .block8 {
+    grid-template-columns: repeat(8, 1fr);
+  }
   /* game-blocks */
   .memory-game-blocks {
     display: grid;
