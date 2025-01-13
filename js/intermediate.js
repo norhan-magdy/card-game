@@ -155,5 +155,40 @@ function startTimer() {
     const remainingSeconds = seconds % 60;
     timerElement.textContent = `Game Time: ${minutes}m ${remainingSeconds}s`;
   }
-
+// Show win popup
+function showWinPopup(message) {
+    const popup = document.getElementById("winPopup");
+    const messageElement = document.getElementById("winMessage");
+    const balloonsContainer = document.createElement("div");
+    balloonsContainer.classList.add("balloons-container");
+    document.body.appendChild(balloonsContainer);
+  
+    messageElement.textContent = message;
+  
+    popup.style.visibility = "visible";
+    popup.style.opacity = "1";
+    document.getElementById("playAgainBtn").addEventListener("click", () => {
+      location.reload();
+    });
+  
+    for (let i = 0; i < 20; i++) {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+  
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.animationDuration = Math.random() * 2 + 3 + "s";
+      balloon.style.backgroundColor = getRandomColor();
+  
+      balloonsContainer.appendChild(balloon);
+  
+      balloon.addEventListener("animationend", () => {
+        balloon.remove();
+      });
+    }
+  
+    setTimeout(() => {
+      balloonsContainer.remove();
+    }, 20000);
+  }
+  
   
