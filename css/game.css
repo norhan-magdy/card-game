@@ -141,3 +141,45 @@
     transform: rotateY(180deg);
   }
   
+/* functions */
+.memory-game-blocks .game-block.is-flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .memory-game-blocks .game-block.is-flipped:hover,
+  .back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  
+  .memory-game-blocks .game-block.has-match {
+    transform: rotateY(180deg);
+    pointer-events: none;
+    animation: magic 0.8s;
+    position: relative;
+    z-index: 1;
+  }
+  /* design chiking */
+.memory-game-blocks .game-block.is-error {
+    transform: rotateY(180deg);
+    pointer-events: none;
+    animation: mageic2 0.8s;
+    position: relative;
+    z-index: 1;
+  }
+  .memory-game-blocks .game-block img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .memory-game-blocks .game-block:hover {
+    transform: scale(1.05);
+  }
+.memory-game-blocks.no-clicking {
+    pointer-events: none;
+  }
+
+  
