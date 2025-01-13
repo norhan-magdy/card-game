@@ -376,3 +376,87 @@
       opacity: 0;
     }
   }
+  /* bubbles */
+  .bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+  }
+  .bubbles span {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in-out;
+    animation-delay: calc(-1s * var(--i));
+  }
+  .bubbles span:nth-child(1) {
+    left: 10%;
+    width: 15px;
+    height: 15px;
+    background-color: #f8bbd0;
+    --i: 0;
+  }
+  .bubbles span:nth-child(2) {
+    left: 20%;
+    width: 25px;
+    height: 25px;
+    background-color: #46aca3;
+    --i: 1;
+  }
+  .bubbles span:nth-child(3) {
+    left: 30%;
+    width: 10px;
+    height: 10px;
+    background-color: #f8bbd0;
+    --i: 2;
+  }
+  .bubbles span:nth-child(4) {
+    left: 40%;
+    width: 20px;
+    height: 20px;
+    background-color: #46aca3;
+    --i: 3;
+  }
+  .bubbles span:nth-child(5) {
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #f8bbd0;
+    --i: 4;
+  }
+  .bubbles span:nth-child(6) {
+    left: 60%;
+    width: 12px;
+    height: 12px;
+    background-color: #46aca3;
+    --i: 5;
+  }
+  .bubbles span:nth-child(7) {
+    left: 70%;
+    width: 18px;
+    height: 18px;
+    background-color: #f8bbd0;
+    --i: 6;
+  }
+  .bubbles span:nth-child(8) {
+    left: 80%;
+    width: 22px;
+    height: 22px;
+    background-color: #46aca3;
+    --i: 7;
+  }
+  .bubbles span:nth-child(9) {
+    left: 90%;
+    width: 25px;
+    height: 25px;
+    background-color: #f8bbd0;
+    --i: 8;
+  }
