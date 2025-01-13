@@ -3,8 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <title>Sttings</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <span>
+        <a href="index.html">
+          <img src="images/ace-of-hearts.png" alt="Logo" class="logo" />
+          Match It
+        </a>
+      </span>
+    </header>
+    <div class="background-bubbles"></div>
+    <div class="settings-panel container">
+      <h1 class="settings-title">Settings</h1>
+      <div class="sound-control">
+        <h2>Sound Control</h2>
+        <div class="sound-buttons">
+          <button class="sound-circle"></button>
+          <button class="sound-circle"></button>
+          <button class="sound-circle"></button>
+          <button class="sound-circle"></button>
+          <button class="sound-circle"></button>
+          <button class="sound-circle"></button>
+        </div>
+      </div>
+
+      <div class="slider-section">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="20"
+          class="slider"
+          id="background-music"
+        />
+        <p>background music ON/OFF:</p>
+      </div>
+
+      <div class="circle-control" id="circle-control">
+        <div class="circle-btn"></div>
+      </div>
+      <p>Change music <span>♫</span></p>
+
+      <div class="control-button" id="save">save</div>
+    </div>
+    <script src="js/bubbles.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>
