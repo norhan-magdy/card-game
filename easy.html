@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>matching game</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body>
+    <div class="bubbles"></div>
+    <header>
+      <span>
+        <a href="index.html">
+          <img src="images/ace-of-hearts.png" alt="Logo" class="logo" />
+          Match It
+        </a>
+      </span>
+    </header>
+    <div class="transperent-page">
+      <button class="close-btn" onclick="transperentbackground()">
+        Welcome to Funny Mode
+      </button>
+    </div>
+    <div class="info-container">
+      <div class="time">
+        <p>Game Time:</p>
+      </div>
+      <div class="tries">
+        <p>Tries:</p>
+        <span>0</span>
+      </div>
+      <div class="Reset">
+        <a href="easy.html"> Reset </a
+        ><a href="easy.html"><i id="resetIcon" class="fas fa-redo-alt"></i></a>
+      </div>
+    </div>
+
+    <div class="memory-game-blocks block4" id="gameBlocks"></div>
+
+    <div class="win-popup" id="winPopup">
+      <div class="win-content">
+        <h1>🎉 Congratulations! 🎉</h1>
+        <p id="winMessage"></p>
+        <button id="playAgainBtn">Play Again</button>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
