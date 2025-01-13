@@ -27,4 +27,48 @@ const cardData = [
     { technology: "broom", image: "images/broom.png", alt: "broom" },
     { technology: "scary", image: "images/scary.png", alt: "scary" },
   ];
-  
+  // Duplicate the cards to make pairs
+const gameCards = [...cardData, ...cardData];
+
+// Shuffle the cards
+function shuffle(array) {
+  let current = array.length,
+    random;
+
+  while (current > 0) {
+    random = Math.floor(Math.random() * current);
+    current--;
+    [array[current], array[random]] = [array[random], array[current]];
+  }
+
+  return array;
+}
+
+// Shuffle the game cards
+shuffle(gameCards);
+
+// Create and append cards dynamically
+gameCards.forEach((card) => {
+  const gameBlock = document.createElement("div");
+  gameBlock.classList.add("game-block");
+  gameBlock.setAttribute("data-technology", card.technology);
+
+  const front = document.createElement("div");
+  front.classList.add("face", "front");
+
+  const back = document.createElement("div");
+  back.classList.add("face", "back");
+  const img = document.createElement("img");
+  img.src = card.image;
+  img.alt = card.alt;
+  back.appendChild(img);
+
+  gameBlock.appendChild(front);
+  gameBlock.appendChild(back);
+
+  blocksContainer.appendChild(gameBlock);
+
+  gameBlock.addEventListener("click", function () {
+    flipBlock(gameBlock);
+  });
+});
