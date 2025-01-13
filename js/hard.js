@@ -1,3 +1,18 @@
+function transperentbackground() {
+    let background = document.querySelector(".transperent-page");
+    background.style.display = "none";
+    flipAllCardsTemporarily(3000);
+    startTimer();
+  }
+  const bubbleContainer = document.querySelector(".bubbles");
+  for (let i = 0; i < 300; i++) {
+    const bubble = document.createElement("span");
+    bubble.style.setProperty("--i", i % 10);
+    bubbleContainer.appendChild(bubble);
+  }
+  let deuration = 700;
+  let blocksContainer = document.querySelector("#gameBlocks");
+  
 // Cards data
 const cardData = [
     { technology: "cartoon", image: "images/cartoon.png", alt: "cartoon" },
