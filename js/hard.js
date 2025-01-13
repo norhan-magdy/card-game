@@ -95,3 +95,66 @@ gameCards.forEach((card) => {
   });
 });
 // 
+function flipAllCardsTemporarily(duration) {
+    const allBlocks = Array.from(blocksContainer.children);
+  
+    allBlocks.forEach((block) => block.classList.add("is-flipped"));
+  
+    setTimeout(() => {
+      allBlocks.forEach((block) => block.classList.remove("is-flipped"));
+    }, duration);
+  }
+  
+  const flipAudio = new Audio("audio/flip.mp3");
+  const wrongAudio = new Audio("audio/faliure.mp3");
+  const successAudio = new Audio("audio/success.mp3");
+  // Flip block function
+  function flipBlock(selectedBlock) {
+    flipAudio.currentTime = 0;
+    flipAudio.play();
+    selectedBlock.classList.add("is-flipped");
+  
+    let allFlippedBlocks = Array.from(blocksContainer.children).filter((block) =>
+      block.classList.contains("is-flipped")
+    );
+  
+    if (allFlippedBlocks.length === 2) {
+      stopclicking();
+      checkMatchingBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
+    }
+  }
+  
+  function stopclicking() {
+    blocksContainer.classList.add("no-clicking");
+    setTimeout(() => {
+      blocksContainer.classList.remove("no-clicking");
+    }, deuration);
+  }
+  
+  function checkMatchingBlocks(firstBlock, secondBlock) {
+    let triesElement = document.querySelector(".tries span");
+  
+    if (firstBlock.dataset.technology === secondBlock.dataset.technology) {
+      firstBlock.classList.remove("is-flipped");
+      secondBlock.classList.remove("is-flipped");
+  
+      triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+      successAudio.currentTime = 0;
+      successAudio.play();
+      firstBlock.classList.add("has-match");
+      secondBlock.classList.add("has-match");
+    } else {
+      triesElement.innerHTML = parseInt(triesElement.innerHTML) + 1;
+      firstBlock.classList.add("is-error");
+      secondBlock.classList.add("is-error");
+      wrongAudio.currentTime = 0;
+      wrongAudio.play();
+      setTimeout(() => {
+        // wrongAudio.currentTime = 0;
+        // wrongAudio.play();
+        firstBlock.classList.remove("is-flipped", "is-error");
+        secondBlock.classList.remove("is-flipped", "is-error");
+      }, deuration);
+    }
+  }
+  
