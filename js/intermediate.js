@@ -139,4 +139,21 @@ function flipAllCardsTemporarily(duration) {
     }
   }
   
+ // Timer and win logic
+const timerElement = document.querySelector(".time");
+let seconds = 0;
+let interval;
+
+function startTimer() {
+    interval = setInterval(() => {
+      seconds++;
+      updateTimerDisplay();
+    }, 1000);
+  }
+  function updateTimerDisplay() {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    timerElement.textContent = `Game Time: ${minutes}m ${remainingSeconds}s`;
+  }
+
   
