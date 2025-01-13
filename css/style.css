@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --background-main-color: #d79cb3;
+  --panel-color: #f7f3f0;
+  --custom-pink-color: #f69da9;
+  --custom-cyan-color: #49c8d8;
+}
+body {
+  font-family: "Droid Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.background-bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+}
+.background-bubbles span {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: rise 8s infinite ease-in-out;
+}
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.2);
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.8);
+    opacity: 0;
+  }
+}
+.settings-panel {
+  margin: 20px auto;
+  background-color: var(--panel-color);
+  border-radius: 20px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+span {
+  font-family: "Wendy One", sans-serif;
+  font-size: 28px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 40%;
+}
+a {
+  font-family: "Wendy One", sans-serif;
+  text-decoration: none;
+  color: #ff69b4;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: inline-block;
+  font-size: 20px;
+}
+#save {
+  height: 30px;
+  background-color: #f8bbd0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#save:hover {
+  background-color: #d596e1 !important;
+}
+@media (max-width: 420px) {
+  .container {
+    width: 300px;
+  }
+}
+@media (min-width: 421px) and (max-width: 767px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+.settings-title {
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff8a80, #80deea, #ffd54f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.sound-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sound-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #89d8e6;
+  border: 2px solid #555;
+  cursor: pointer;
+}
+
+.sound-circle:nth-child(odd) {
+  background-color: var(--custom-pink-color);
+}
+
+.slider-section {
+  margin: 20px 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background-color: #d8f1f7;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+  margin: 10px auto;
+  width: 80%;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  background: #89d8e6;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #49c8d8;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #49c8d8;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.circle-control {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.circle-btn {
+  width: 100px;
+  height: 100px;
+  background: conic-gradient(
+    var(--custom-pink-color) 0% 25%,
+    var(--custom-cyan-color) 25% 50%,
+    var(--custom-pink-color) 50% 75%,
+    var(--custom-cyan-color) 75% 100%
+  );
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+}
+.circle-btn:hover {
+  animation: spin 2s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+.circle-btn::before {
+  font-size: xx-large;
+  content: "♪";
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin: 15px 0;
+}
