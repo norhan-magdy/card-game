@@ -242,5 +242,18 @@ function getRandomColor() {
       checkWinCondition();
     });
   });
+//   
+function transperentbackground() {
+    let background = document.querySelector(".transperent-page");
+    background.style.display = "none";
+    flipAllCardsTemporarily(3000);
+    startTimer();
+  }
+  const bubbleContainer = document.querySelector(".bubbles");
+  for (let i = 0; i < 300; i++) {
+    const bubble = document.createElement("span");
+    bubble.style.setProperty("--i", i % 10); // Variable for animation delay
+    bubbleContainer.appendChild(bubble);
+  }
   
   
