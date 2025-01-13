@@ -1,3 +1,7 @@
+//variabels
+let deuration = 700;
+let blocksContainer = document.querySelector("#gameBlocks");
+
 // Cards data
 const cardData = [
     { technology: "shield", image: "images/shield.png", alt: "shield" },
@@ -72,3 +76,33 @@ gameCards.forEach((card) => {
     flipBlock(gameBlock);
   });
 });
+
+function flipAllCardsTemporarily(duration) {
+    const allBlocks = Array.from(blocksContainer.children);
+  
+    allBlocks.forEach((block) => block.classList.add("is-flipped"));
+  
+    setTimeout(() => {
+      allBlocks.forEach((block) => block.classList.remove("is-flipped"));
+    }, duration);
+  }
+  
+  const flipAudio = new Audio("audio/flip.mp3");
+  const wrongAudio = new Audio("audio/faliure.mp3");
+  const successAudio = new Audio("audio/success.mp3");
+  // Flip block function
+  function flipBlock(selectedBlock) {
+    flipAudio.currentTime = 0;
+    flipAudio.play();
+    selectedBlock.classList.add("is-flipped");
+  
+    let allFlippedBlocks = Array.from(blocksContainer.children).filter((block) =>
+      block.classList.contains("is-flipped")
+    );
+  
+    if (allFlippedBlocks.length === 2) {
+      stopclicking();
+      checkMatchingBlocks(allFlippedBlocks[0], allFlippedBlocks[1]);
+    }
+  }
+  
