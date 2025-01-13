@@ -190,5 +190,57 @@ function showWinPopup(message) {
       balloonsContainer.remove();
     }, 20000);
   }
+//   
+function getRandomColor() {
+    const colors = [
+      "#ff5f5f",
+      "#ff9f5f",
+      "#ffdf5f",
+      "#9fff5f",
+      "#5fffdf",
+      "#5f9fff",
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+  
+  const clapping = new Audio("audio/clapping.mp3");
+  // Check win condition
+  function checkWinCondition() {
+    const matchedBlocks = document.querySelectorAll(".has-match");
+    if (matchedBlocks.length === blocksContainer.children.length) {
+      clapping.currentTime = 0;
+      clapping.play();
+      clearInterval(interval);
+      const timeTaken = seconds;
+      const triesElement = document.querySelector(".tries span");
+      const triesCount = parseInt(triesElement.innerHTML);
+      const finalScore = triesCount;
+      const previousScore = localStorage.getItem("bestScore2");
+      let message = `Time Taken: ${Math.floor(timeTaken / 60)}m ${
+        timeTaken % 60
+      }s\nTries: ${triesCount}\nYour Score: ${finalScore}`;
+  
+      if (previousScore) {
+        if (finalScore < previousScore) {
+          message += `\n🎊 New High Score! Previous Best: ${previousScore}`;
+          localStorage.setItem("bestScore2", finalScore);
+        } else {
+          message += `\nYour Best Score: ${previousScore}`;
+        }
+      } else {
+        message += `\nThis is your first game!`;
+        localStorage.setItem("bestScore2", finalScore);
+      }
+  
+      showWinPopup(message);
+    }
+  }
+  
+  // Trigger checkWinCondition on each transitionend event
+  blocksContainer.querySelectorAll(".game-block").forEach((block) => {
+    block.addEventListener("transitionend", () => {
+      checkWinCondition();
+    });
+  });
   
   
