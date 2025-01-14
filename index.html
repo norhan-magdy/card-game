@@ -3,7 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>card-game</title>
+    <title>Matching Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main3.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <span>
+        <a href="index.html">
+          <img src="images/ace-of-hearts.png" alt="Logo" class="logo" />
+          Match It
+        </a>
+      </span>
+    </header>
+    <div class="background-bubbles"></div>
+    <div class="container">
+      <div class="new">
+        <div class="column">
+          <div class="bubbles2">
+            <div class="bubble small pink"></div>
+            <div class="bubble large blue"></div>
+          </div>
+          <div class="bubbles2">
+            <div class="bubble medium pink"></div>
+            <div class="bubble small blue"></div>
+          </div>
+        </div>
+        <div class="bubbles">
+          <div class="bubble pink"></div>
+          <div class="bubble blue"></div>
+          <div class="bubble yellow"></div>
+          <div class="bubble pink"></div>
+          <div class="bubble blue"></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="title">Matching Game</div>
+        <div class="subtitle">Matching and game</div>
+        <div class="buttons">
+          <div id="easy" class="button pink">
+            <div class="circle">?</div>
+            <div class="button-text">Easy</div>
+          </div>
+          <div id="medium" class="button mint">
+            <div class="circle">?</div>
+            <div class="button-text">Medium</div>
+          </div>
+          <div id="hard" class="button lavender">
+            <div class="circle">?</div>
+            <div class="button-text">Hard</div>
+          </div>
+        </div>
+
+        <div class="control-buttons">
+          <div class="control-button" id="settings">Settings</div>
+          <div
+            class="control-button"
+            style="background-color: #e1bee7"
+            id="instruction"
+          >
+            Instruction
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main3.js"></script>
+    <script type="module" src="js/sound2.js"></script>
+    <script src="js/bubbles.js"></script>
+  </body>
 </html>
