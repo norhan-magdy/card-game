@@ -1,3 +1,26 @@
+@media (max-width: 480px) {
+    .card-body {
+      margin: 5px;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+  
+    .first-instruction,
+    .seconed-instruction {
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    span {
+      font-size: 16px;
+    }
+    .header > h1 {
+      font-size: 22px;
+    }
+  }
 * {
     box-sizing: border-box;
     margin: 0;
