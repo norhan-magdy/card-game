@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(180deg, #ffd1dc, #c6e2ff, #fff9c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  span {
+    font-family: "Wendy One", sans-serif;
+    font-size: 28px;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    border-radius: 40%;
+  }
+  a {
+    font-family: "Wendy One", sans-serif;
+    text-decoration: none;
+    color: #ff69b4;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    font-size: 20px;
+  }
+  
+  /* Animated Background Bubbles */
+  .background-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #f8bbd0, #46aca3);
+  }
+  
+  .background-bubbles span {
+    position: absolute;
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in-out;
+  }
+  
+  @keyframes rise {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-50vh) scale(1.2);
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+  /* Container */
+  .container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 95%;
+    height: 70%;
+    max-width: 500px;
+    border: solid 3px linear-gradient(to bottom, #f8bbd0, #46aca3);
+    z-index: 1;
+  }
+  
+  /* Card Bubbles */
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 -2px 4px rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Titles and Buttons */
+  .title {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff8a80, #80deea, #ffd54f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: #888888;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px;
+  }
+  
+  .button {
+    width: 110px;
+    height: 160px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    margin-top: 4vh;
+  }
+  
+  .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button.pink {
+    background-color: #f8bbd0;
+  }
+  
+  .button.mint {
+    background-color: #b2dfdb;
+  }
+  
+  .button.lavender {
+    background-color: #e1bee7;
+  }
+  
+  .button-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .bubbles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .bubble {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #ffc1e3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+      inset 0 -4px 8px rgba(255, 255, 255, 0.5);
+    margin-left: 1.2vw;
+  }
+  
+  .bubble::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+      inset 0 -2px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+  .bubble.blue {
+    background-color: #aedff7;
+  }
+  
+  .bubble.yellow {
+    background-color: #fff59d;
+  }
+  
+  .column {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .bubbles2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .bubble.small {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .bubble.medium {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .bubble.large {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .bubbles {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+  
+  .bubble {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ffc1e3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+      inset 0 -2px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+  .bubble.blue {
+    background-color: #aedff7;
+  }
+  
+  .bubble.yellow {
+    background-color: #fff59d;
+  }
+  
+  .content {
+    position: relative;
+    bottom: 20vh;
+  }
+  
+  .control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  
+  .control-button {
+    width: 100px;
+    height: 30px;
+    background-color: #f8bbd0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .control-button:hover {
+    background-color: #f48fb1;
+  }
+  #instruction:hover {
+    background-color: #d596e1 !important;
+  }
+  
+  .bubbles .bubble {
+    animation: scaleAnimation 4s ease-in-out infinite;
+  }
+  
+  @keyframes scaleAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .bubble.blue {
+    background-color: #aedff7;
+  }
+  
+  .bubble.yellow {
+    background-color: #fff59d;
+  }
+  
+  .bubble:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(2) {
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(3) {
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(4) {
+    animation-delay: 3s;
+  }
+  
+  .bubble:nth-child(5) {
+    animation-delay: 4s;
+  }
+  
